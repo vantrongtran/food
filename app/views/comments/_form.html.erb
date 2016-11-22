@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-1"></div>
+    <div class="col-md-5">
+      <%= form_for([@product, @product.comments.build]) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <table>
+        <tr>
+          <td>
+            <%= f.text_area :content, placeholder: "Create new comment..." %>
+          </td>
+          <td>
+          <%= f.submit t(".post"), class: "btn btn-primary" %>
+          </td>
+        </tr>
+      </table>
+      <% end %>
+    </div>
+</div>

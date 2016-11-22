@@ -1,0 +1,31 @@
+<% @orders.each do |order| %>
+  <tr class="first odd">
+    <td>
+      <div class="a-center">
+        <%= l order.created_at, format: :short_date %>
+      </div>
+    </td>
+    <td class="a-center">
+      <p><%= link_to order.order_details.sum(:quanty), order %></p>
+    </td>
+    <td class="a-center">
+      <p><%= order.address %></p>
+    </td>
+    <td class="a-center last">
+      <span class="cart-price">
+        <span class="price"><%= order.total %></span>
+      </span>
+    </td>
+    <td class="a-center">
+      <% if order.waiting? %>
+        <span class="label label-warning">
+          <%= order.status %>
+        </span>
+      <% else %>
+        <span class="label label-success">
+          <%= order.status %>
+        </span>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

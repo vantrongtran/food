@@ -1,0 +1,43 @@
+<% provide(:title, @product.name) %>
+<div class="space"></div>
+<div class="container">
+<div class="row">
+  <div class="col-md-4">
+    <div class="row">
+      <%= image_tag "product.jpg", class: "product_image" %>
+      <br>
+      <div class="small-2 large-4 columns">
+        <% if current_user %>
+          Ratings: <%= rating_for @product, "rating", stars: 10, disable_after_rate: false %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <h2><%= @product.name %></h2>
+    <h3><%= @product.price %></h3>
+    <p><%= @product.description %></p>
+    <p>
+      <%= t ".share with: " %>
+      <%= social_share_button_tag @product.name %>
+    </p>
+    <% if @product.quanty == 0 %>
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        <%= t ".add_to_cart" %>
+    <% else %>
+      <%= link_to cart_path(@product.id), remote: true, method: :patch, class: "btn btn-default" do %>
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+          <%= t ".add_to_cart" %>
+        <% end %>
+    <% end %>
+  </div>
+</div>
+</div>
+<div>
+  <%= render "comments/form" %>
+</div>
+<div id= "comments-list">
+  <%= render @comments %>
+  <%= will_paginate @comments %>
+</div>
+<div class="space"></div>

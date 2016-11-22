@@ -1,0 +1,15 @@
+<% provide :title, (t ".alluser") %>
+<h1><%= t ".alluser" %></h1>
+<table id="users-table", data-source="<%= admin_users_path(format: :json) %>">
+  <thead>
+    <tr>
+      <th>Avatar</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Created at</th>
+      <th class="action-destroy">Destroy</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>

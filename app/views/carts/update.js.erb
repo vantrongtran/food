@@ -1,0 +1,3 @@
+$('.total-item').text('<%= @cart.total_price %>');
+$('#cart').html('<%= j render "list_products" %>');
+$('.badge').text('<%= @cart.count %>');

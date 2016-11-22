@@ -1,0 +1,23 @@
+<li id="comment-<%= comment.id %>">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-1">
+      <span><%= image_tag comment.user.avatar, class: "avatar" %>
+      </span>
+      <br/>
+      <span class="user"><%= link_to comment.user.name, "#" %></span>
+      </div>
+    <div class="col-md-4">
+      <span class="content"><%= comment.content %></span>
+      <br/>
+      <span class="timestamp">
+        <%= t ".commented" %> <%= time_ago_in_words(comment.created_at) %> ago.
+      </span>
+      <% if current_user == comment.user  || current_user.is_admin? %>
+        <%= link_to t(".delete"), product_comment_path(comment.product, comment),method: :delete, data: {confirm: t("comments.confirm_delete")},
+          remote: true %>
+      <% end %>
+    </div>
+  </div>
+</li>
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </script>
+    <title><%= yield(:title) %></title>
+    <%= render "layouts/rails_default" %>
+  </head>
+  <body>
+  <div id="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <%= render "layouts/admin_header" %>
+      <%= render "layouts/admin_menu" %>
+    </nav>
+
+    <div class="container-fluid">
+      <%= render "layouts/flash" %>
+      <%= yield %>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  logo: "Food&Drink"
+  update_success: "Update successful!"
+  update_failed: "Update failed!"
+  create_success: "Create successful!"
+  create_failed:  "Create failed!"
+  delete_success: "Delete successful!"
+  delete_failed: "Delete failed!"
+  mail:
+    subject: "ORDER"
+    name: "From user: "
+    date: "Date: "
+    title_order: "ORDER"
+    note_order: "You have new order !"
+  orders:
+    successful: "Order successful!"
+    failed: "Order failed!"
+    address: "Address is empty!"
+    index:
+      orders: "Orders"
+    show:
+      orders: "Orders"
+  comments:
+    confirm_delete: "Are you sure?"
+    create: "Comment created!"
+    form:
+      post: "Comment"
+  saved: "Saved"
+  time:
+    formats:
+      short_date: "%m/%d/%Y"
+  carts:
+    index:
+      cart: "My cart"
+      order: "Order"
+  admin:
+    dashboard:
+      index:
+        dashboard: "Dashboard"
+        welcome: "Welcome admin, you have: "
+        new_orders: "New orders"
+        new_suggests: "New suggests"
+        view_details : "View details"
+    suggests:
+      index:
+        suggests: "Suggests"
+    orders:
+      index:
+        orders: "orders"
+    users:
+      index:
+        alluser: "Users"
+    products:
+      index:
+        allproduct: "Products"
+      edit:
+        edit_product: "Edit product"
+        update: "Update"
+      new:
+        add: "Add"
+    categories:
+      edit:
+        update: "Update"
+      new:
+        add: "Add"
+      index:
+        allcategory: "Categories"
+  products:
+    product:
+        quantity: "Quantity: "
+    index:
+      home: "Home"
+      logo: "Food&Drink"
+      slogan: "CLEAN & SIMPLE DESIGN"
+      signup: "SIGN UP"
+  hello: "Hello world"
+  layouts:
+    header:
+      home: "Home"
+      gallery: "Gallery"
+      menu: "Menu"
+      login: "Login"
+      contact: "Contact"
+      sign_out: "Logout"
+    footer:
+      contact: "Contact Info."
+      phone: "Phone"
+      phones: "090-123-4567"
+      address: "Address"
+      adresss: "Da Nang, Viet Nam"
+      sunday: "Sunday"
+      montofri: "Monday - Friday"
+      saturday: "Saturday"
+      sunday_time: "10:30 AM - 10:00 PM"
+      monday_time: "9:00 AM - 8:00 PM"
+      saturday_time: "11:30 AM - 10:00 PM"
+      follow_us: "Follow Us"
+      copyright: "Copyright © Food & Drink"
+      logo: "Food&Drink"
+  static_pages:
+    home:
+      food_gallery: "Food Gallery"
+      home: "Home"
+      logo: "Food&Drink"
+      slogan: "CLEAN & SIMPLE DESIGN"
+      signup: "SIGN UP"

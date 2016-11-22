@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </script>
+    <title><%= yield(:title) %></title>
+    <%= render "layouts/rails_default" %>
+  </head>
+  <body>
+    <%= render "layouts/header" %>
+    <%= render "sessions/new" %>
+    <div>
+      <%= render "layouts/flash" %>
+      <%= yield %>
+    </div>
+    <%= render "layouts/footer" %>
+  </body>
+</html>
+

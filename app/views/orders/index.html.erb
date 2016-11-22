@@ -1,0 +1,29 @@
+<% provide :title, t(".orders") %>
+<div class="space"></div>
+<div class="events">
+  <div class="container">
+      <table class="table table-bordered">
+        <thead>
+          <tr class="em-block-title">
+            <th class="a-center">
+              <span class="nobr"><%= t ".time" %></span>
+            </th>
+            <th class="a-center">
+              <span class="nobr"><%= t ".quantity" %></span>
+            </th>
+            <th class="a-center">
+              <span class="nobr"><%= t "address" %></span>
+            </th>
+            <th><%= t ".subtotal" %></th>
+            <th class="a-center">
+              <span class="nobr"><%= t ".status" %></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render "list_orders" %>
+        </tbody>
+      </table>
+  </div>
+</div>
+<div class="space"></div>

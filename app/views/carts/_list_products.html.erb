@@ -1,0 +1,38 @@
+<% @cart.items.each do |item| %>
+  <tr>
+    <td>
+      <%= link_to item.product.name, item.product %>
+    </td>
+    <td>
+      <div class="cart-product">
+        <%= link_to image_tag(item.product.image), "#" %>
+      </div>
+    </td>
+    <td class="a-center">
+      <%= item.product.price %>
+    </td>
+    <td>
+      <div class="qty_cart">
+        <div class="qty-ctl">
+          <%= link_to edit_cart_path(item.product), remote: true, class: "decrease" do %>
+            <%= button_tag t(".decrease"),class: "decrease"%>
+          <% end %>
+        </div>
+        <input value="<%= item.quantity %>" class="input-text qty"/>
+        <div class="qty-ctl">
+          <%= link_to cart_path(item.product), remote: true, method: :patch, class: "increase" do %>
+            <%= button_tag t(".increase"), class: "increase" %>
+          <% end %>
+        </div>
+      </div>
+    </td>
+    <td class="a-center last">
+      <span class="cart-price">
+        <span class="price"><%= item.total_price %></span>
+      </span>
+    </td>
+    <td>
+      <%= link_to t(".remove"), cart_path(item.product_id), method: :delete, remote: true %>
+    </td>
+  </tr>
+<% end %>

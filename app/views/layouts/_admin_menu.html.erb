@@ -1,0 +1,28 @@
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav side-nav">
+    <li>
+      <%= link_to t(".dashboard"), admin_dashboard_index_path,
+        data: {turbolinks: false} %>
+    </li>
+    <li>
+      <%= link_to t(".users"), admin_users_path,
+        data: {turbolinks: false}%>
+    </li>
+    <li>
+      <%= link_to t(".categories"), admin_categories_path,
+        data: {turbolinks: false}%>
+    </li>
+    <li>
+      <%= link_to t(".products"), admin_products_path,
+        data: {turbolinks: false}%>
+    </li>
+    <li>
+      <%= link_to t(".orders"), admin_orders_path,
+        data: {turbolinks: false}%>
+    </li>
+    <li>
+      <%= link_to t(".suggests"), admin_suggests_path,
+        data: {turbolinks: false}%>
+    </li>
+  </ul>
+</div>

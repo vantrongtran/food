@@ -1,0 +1,42 @@
+<% provide :title, (t ".cart") %>
+<div class="space"></div>
+<% if @cart.present? %>
+  <div class="container">
+    <form>
+      <div class="cart-total pull-right">
+        <h3>
+          <%= t ".total" %>
+          <span class="total-item"><%= @cart.total_price %></span>
+        </h3>
+      </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t ".name" %></th>
+          <th><%= t ".image" %></th>
+          <th><%= t ".price" %></th>
+          <th><%= t ".quantity" %></th>
+          <th><%= t ".subtotal" %></th>
+          <th><%= t ".remove" %></th>
+        </tr>
+      </thead>
+        <tbody id="cart">
+          <%= render "list_products" %>
+        </tbody>
+      </table>
+      <div class="order">
+        <% if user_signed_in? %>
+          <%= link_to t(".order"), "#", class: "button btn-update", data: {toggle: "modal", target: "#address"} %>
+        <% else %>
+          <%= link_to t(".login_to_order"), "#",
+            data: {toggle: "modal", target: "#myModal"},
+            class: "button btn-update" %>
+        <% end %>
+      </div>
+      <div class="clearfix"></div>
+    </form>
+  </div>
+<% end %>
+<div class="space"></div>
+<%= render "address" %>

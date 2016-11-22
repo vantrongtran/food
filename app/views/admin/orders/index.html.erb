@@ -1,0 +1,18 @@
+<% provide :title, (t ".orders") %>
+<h1><%= t ".orders" %></h1>
+<br/>
+<table id="orders-table",
+  data-source="<%= admin_orders_path(format: :json) %>">
+  <thead>
+    <tr>
+      <th><%= t ".user_name" %></th>
+      <th><%= t ".quantity" %></th>
+      <th><%= t ".address" %></th>
+      <th><%= t ".created_at" %></th>
+      <th><%= t ".total" %></th>
+      <th><%= t ".Status" %></th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>

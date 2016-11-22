@@ -1,0 +1,11 @@
+I"Þ(function() {
+  $("form#sign_in_user").bind("ajax:success", function(e, data, status, xhr) {
+    if (data.success) {
+      return alert('failure!');
+    } else {
+      return alert('failure!');
+    }
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,51 @@
+<% provide :title, t(".home") %>
+<!-- home section -->
+<section id="home" class="parallax-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <h1><%= t ".logo" %></h1>
+        <h2><%= t ".slogan" %></h2>
+        <% if !user_signed_in? %>
+          <%= link_to t(".signup"), new_user_registration_path,  class: "btn btn-default" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- gallery section -->
+<section id="gallery" class="parallax-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8 col-sm-12 text-center">
+        <h1 class="heading"><%= t".food_gallery" %></h1>
+      </div>
+      <div class="col-md-9"></div>
+      <div>
+        <input type="text" id="search" placeholder="Search">
+        <button class="glyphicon glyphicon-search"></button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="list-group categories">
+        <a onclick = "loadProduct('')" class="list-group-item">
+            <%= t ".all" %>
+          </a>
+        <% @categories.each do |c| %>
+          <a onclick = "loadProduct(<%= c.id %>)" class="list-group-item">
+            <%= c.name %>
+          </a>
+        <% end %>
+      </div>
+    </div>
+    <div>
+      <div class="col-md-9" id="products">
+        <%= render @products %>
+      </div>
+      <div class="col-md-3"></div>
+      <div class="col-md-9" id="paginate">
+        <%= will_paginate @products %>
+      </div>
+    </div>
+  </div>
+</section>

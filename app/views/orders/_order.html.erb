@@ -1,0 +1,28 @@
+<% @order.order_details.each do |item| %>
+  <tr class="first odd">
+    <td>
+      <%= link_to item.product.name, item.product %>
+    </td>
+    <td>
+      <div class="cart-product">
+        <%= image_tag(item.product.image) %>
+      </div>
+    </td>
+    <td class="a-center">
+      <span class="cart-price">
+        <span class="price"><%= item.product.price %></span>
+      </span>
+    </td>
+    <td class="a-center">
+      <p><%= item.order.address %></p>
+    </td>
+    <td class="a-center">
+      <p><%= item.quanty %></p>
+    </td>
+    <td class="a-center last">
+      <span class="cart-price">
+        <span class="price"><%= item.total_price %><%= t "currency" %></span>
+      </span>
+    </td>
+  </tr>
+<% end %>

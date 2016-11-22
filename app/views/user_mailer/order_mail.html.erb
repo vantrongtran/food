@@ -1,0 +1,5 @@
+<h1><%= t "mail.title_order" %></h1>
+<p><%= t "mail.note_order" %></p>
+<%= t "mail.name" %><%= @order.user.name %><br>
+<%= t "mail.date" %>
+<%= @order.created_at.strftime('%b %d, %Y') %>

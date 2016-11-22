@@ -1,0 +1,34 @@
+<%= form_for [:admin, @product], multipart: true, authenticity_token: true, remote: true do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="modal-body">
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :category %>
+      <%= f.select "category_id", options_for_select(@categories.collect{
+        |category| [category.name, category.id]}),
+        class: "btn btn-default filter-categories" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :quanty %>
+      <%= f.number_field :quanty, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :price %>
+      <%= f.number_field :price, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :image %>
+        <%= f.file_field :image, autofocus: true %>
+      </div>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit yield(:button_text), class: "btn btn-primary", id: "btn-submit" %>
+  </div>
+<% end %>

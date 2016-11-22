@@ -1,0 +1,65 @@
+<% provide :title, (t ".suggests") %>
+<div class="space"></div>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div>
+    <div>
+      <button type="button" class="btn btn-primary" data-toggle="modal"
+        data-target=".new-product-modal"><%= t "new" %></button>
+    </div>
+    <br/>
+    <div class="container">
+      <table class="table table-bordered">
+        <thead>
+          <tr class="em-block-title">
+            <th class="a-center">
+              <span class="nobr"><%= t ".time" %></span>
+            </th>
+            <th class="a-center">
+              <span class="nobr"><%= t ".name" %></span>
+            </th>
+            <th class="a-center">
+              <span class="nobr"><%= t ".image" %></span>
+            </th>
+            <th><%= t ".category" %></th>
+            <th class="a-center">
+              <span class="nobr"><%= t ".status" %></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @suggests.each do |p| %>
+            <tr class="first odd">
+              <td>
+                <div class="a-center">
+                  <%= l p.created_at, format: :short_date %>
+                </div>
+              </td>
+              <td class="a-center">
+                <p><%= p.name %></p>
+              </td>
+              <td class="a-center">
+                <p><%= image_tag(p.image, class: "image") %></p>
+              </td>
+              <td><%= p.category.name %></td>
+              <td class="a-center">
+                <% if p.suggest? %>
+                  <span class="label label-warning">
+                    <%= p.types %>
+                  </span>
+                <% else %>
+                  <span class="label label-success">
+                    <%= p.types %>
+                  </span>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+    </div>
+  </div>
+</div>
+<%= render "new" %>
+<div class="space"></div>
